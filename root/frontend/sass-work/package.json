@@ -1,0 +1,14 @@
+{
+  "name": "sass-for-epostman",
+  "version": "1.0.0",
+  "description": "a sass project for epostman",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ali Bashir",
+  "license": "ISC",
+  "dependencies": {
+    "sass-node": "^4.11.2"
+  }
+}
