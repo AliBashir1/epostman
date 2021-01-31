@@ -1,0 +1,98 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Nunito:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- set up login form -->
+    <!-- <div class="header__loginform">
+          <form action="#" class="loginform">
+            <input type="text" >
+          </form>
+        </div> -->
+
+    <div class="header">
+      <svg class="header__logo"><use xlink:href="img/sprite.svg#icon-paper-plane"></use></svg>
+      <p class="header__text logo-text">e-postman</p>
+      <button class="btn login-btn">Login</button>
+    </div>
+
+    <main class="container homepage">
+      <!-- animated message -->
+      <h1 class="homepage__animated-msg heading-1">
+        <span>e-postman</span>
+        <div class="homepage__animated-msg__words">
+          <ul>
+            <li>message</li>
+            <li>your</li>
+            <li>send</li>
+          </ul>
+        </div>
+      </h1>
+
+      <!-- signup forms -->
+      <div class="homepage__signup">
+        <h2 class="heading-2 mb-s">Give it a try!</h2>
+        <form action="" class="form">
+          <input type="text" class="form__input" name="firstName" placeholder="First Name" id="firstName" autocomplete="off" required />
+          <label for="firstName" class="form__label">First Name</label>
+
+          <input type="text" class="form__input" name="lastName" placeholder="Last Name" id="lastName" autocomplete="off" required />
+          <label for="lastName" class="form__label">Last Name</label>
+
+          <input type="email" class="form__input" name="email" placeholder="Your email" id="sEmail" autocomplete="off" required />
+          <label for="sEmail" class="form__label">Your Email</label>
+
+          <input type="password" class="form__input" name="password" placeholder="password" id="sPassword" autocomplete="off" required />
+          <label for="sPassword" class="form__label">Password</label>
+          <button class="btn signup-btn" type="submit">Sign up</button>
+        </form>
+        <div class="homepage__signup__text"><span>or</span></div>
+        <div class="homepage__signup__icon-box">
+          <svg class="icon icon--google"><use xlink:href="img/sprite.svg#icon-google"></use></svg>
+          <svg class="icon icon--fb"><use xlink:href="img/sprite.svg#icon-facebook"></use></svg>
+        </div>
+      </div>
+
+      <!-- poject info -->
+      <div class="homepage__projectdetails">
+        <div class="homepage__projectdetails__info">
+          <svg class="icon icon--info">
+            <use xlink:href="img/sprite.svg#icon-info"></use>
+          </svg>
+          <p class="homepage__projectdetails__text">This project works like a postman. its job is to deliver your message.</p>
+        </div>
+
+        <div class="homepage__projectdetails__sourcecode">
+          <svg class="icon icon--embed2">
+            <use xlink:href="img/sprite.svg#icon-embed2"></use>
+          </svg>
+          <p class="homepage__projectdetails__text">if you are intrested in source code please click here "somelink"</p>
+        </div>
+
+        <div class="homepage__projectdetails__developer">
+          <svg class="icon icon--pacman">
+            <use xlink:href="img/sprite.svg#icon-pacman"></use>
+          </svg>
+          <p class="homepage__projectdetails__text">Hi my name is Ali Bashir. I have developer this app.</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer">
+      <nav class="f-nav">
+        <ul class="f-nav__list">
+          <li class="f-nav__item f-nav__item"><a href="" class="f-nav__link">Privacy</a></li>
+          <li class="f-nav__item f-nav__item"><a href="" class="f-nav__link">Developer by Ali Bashir</a></li>
+          <li class="f-nav__item f-nav__item"><a href="" class="f-nav__link">Contact</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>

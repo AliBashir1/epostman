@@ -1,0 +1,15 @@
+.container {
+  max-width: $max-width;
+  height: 80vh;
+  box-shadow: $light-shadow;
+  background-color: rgba(black, 0.8);
+  border-radius: 2rem;
+  // set location on  body container
+  grid-column: container-start / container-end;
+  grid-row: 2/3;
+
+  display: grid;
+  grid-template-columns: repeat(8, [col-start] minmax(min-content, 1fr) [col-end]);
+  grid-template-rows: 6vh 25vh 25vh repeat(2, minmax(min-content, 1fr));
+  grid-gap: 1.5rem;
+}

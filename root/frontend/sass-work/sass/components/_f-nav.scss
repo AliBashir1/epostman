@@ -1,0 +1,25 @@
+.f-nav {
+  font-size: 1.5rem;
+  &__list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+  &__item {
+    padding: 1.5rem;
+    transition: all 0.4s;
+    position: relative;
+
+    @include animatedBtmBorder($color-grey-light-2);
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      text-decoration: none;
+      font-size: 1.2rem;
+      position: relative;
+      color: $color-grey-light-2;
+    }
+  }
+}

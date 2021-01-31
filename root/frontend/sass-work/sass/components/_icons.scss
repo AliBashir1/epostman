@@ -1,0 +1,24 @@
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  transition: all 0.5s ease;
+  &:hover {
+    transform: scale(1.2);
+  }
+  &--fb {
+    fill: #3b5998;
+  }
+  &--google {
+    fill: #de5246;
+  }
+  &--info {
+    fill: $color-primary-light;
+  }
+
+  &--embed2 {
+    fill: $color-secondary-light;
+  }
+  &--pacman {
+    fill: $color-tertiary-light;
+  }
+}

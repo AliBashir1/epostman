@@ -1,0 +1,57 @@
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0px rgba($color-secondary, 0.2);
+  }
+
+  100% {
+    box-shadow: 0 0 0 20px rgba($color-secondary, 0);
+  }
+}
+
+@keyframes flip3 {
+  0% {
+    margin-top: -27rem;
+  }
+  5% {
+    margin-top: -18rem;
+  }
+  33% {
+    margin-top: -18rem;
+  }
+  38% {
+    margin-top: -9rem;
+  }
+  66% {
+    margin-top: -9rem;
+  }
+  71% {
+    margin-top: 0px;
+  }
+  99.99% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: -27rem;
+  }
+}
+
+@keyframes fly {
+  0% {
+    transform: translate(-7rem);
+  }
+  20% {
+    transform: translate(5rem) rotate(40deg) scale(0.5);
+  }
+  40% {
+    transform: translate(25rem) rotate3d(0.5, 0.5, 0.5, 120rad);
+  }
+  60% {
+    transform: translate(33rem);
+  }
+  80% {
+    transform: translate(55rem);
+  }
+  100% {
+    transform: translate(75rem);
+  }
+}
