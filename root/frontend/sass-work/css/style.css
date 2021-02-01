@@ -14,6 +14,11 @@
   letter-spacing: 1.5rem;
   color: #afb3aa; }
 
+.heading-3 {
+  font-size: 2rem;
+  letter-spacing: 1.5rem;
+  color: #afb3aa; }
+
 .paragraph {
   font-size: 1.6rem;
   line-height: 1.6;
@@ -37,11 +42,41 @@
 .mt-l {
   margin-top: 8rem; }
 
+.pulse-scale-effect:hover {
+  animation: pulse 1s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: scale(1.05); }
+
+.pulse-scale-effect:focus, .pulse-scale-effect:active {
+  background-color: #96bb7c;
+  color: black;
+  transform: scale(0.9); }
+
+.btn-pressed-effect:hover {
+  transform: scale(1.05); }
+
+.btn-pressed-effect:focus, .btn-pressed-effect:active {
+  transform: scale(0.9); }
+
+.gradient-effect {
+  background-color: transparent;
+  background-image: linear-gradient(90deg, rgba(150, 187, 124, 0) 21%, #96bb7c 28%, #e08f62 48%, #f8ce6c 67%, rgba(150, 187, 124, 0) 82%);
+  background-size: 550%;
+  background-position: right;
+  border: 0.5px solid #dbb04aff;
+  transition: background-position 1s cubic-bezier(1, 0.885, 0.32, 1.2), background-color 0.1s; }
+  .gradient-effect:hover {
+    background-position: left;
+    border: 0.5px solid #96bb7c;
+    color: #96bb7c; }
+  .gradient-effect:active {
+    background-color: #96bb7c;
+    color: black; }
+
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0px rgba(224, 143, 98, 0.2); }
+    box-shadow: 0 0 0 0px rgba(150, 187, 124, 0.2); }
   100% {
-    box-shadow: 0 0 0 20px rgba(224, 143, 98, 0); } }
+    box-shadow: 0 0 0 20px rgba(219, 176, 74, 0); } }
 
 @keyframes flip3 {
   0% {
@@ -110,19 +145,60 @@ body {
   grid-gap: 1.5rem; }
 
 .header {
-  grid-column: container-start 1 / container-end;
+  grid-column: container-start / container-end;
   grid-row: 2/3;
   height: 5rem;
   margin: 0.5rem 1rem;
   z-index: 999;
-  display: flex; }
-  .header__logo {
-    width: 4rem;
-    height: 4rem;
-    fill: #96bb7c;
-    margin-right: 1rem; }
-  .header__text {
-    margin-right: auto; }
+  display: flex;
+  position: relative; }
+  .header__right {
+    margin-right: auto;
+    display: flex; }
+    .header__right__logo {
+      width: 4rem;
+      height: 4rem;
+      fill: #96bb7c;
+      margin-right: 2rem; }
+  .header__left__checkbox {
+    display: none; }
+  .header__left__login__button {
+    z-index: 200;
+    position: relative;
+    display: block;
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: #b9e798;
+    transition: all 0.1s ease;
+    font: inherit;
+    font-size: 1.5rem;
+    font-weight: 700; }
+    .header__left__login__button--open {
+      display: inline-block;
+      color: black;
+      position: absolute;
+      top: 1.4rem;
+      right: 5px;
+      transition: all 0.3s ease; }
+    .header__left__login__button--close {
+      color: #663826;
+      position: absolute;
+      top: 1.4rem;
+      right: 2rem;
+      opacity: 0;
+      transform: rotate(220deg);
+      transition: all 0.3s ease; }
+  .header__left__checkbox:checked + .login-nav {
+    transform: scale(1);
+    opacity: 1; }
+  .header__left__checkbox:checked ~ .header__left__login__button .header__left__login__button--close {
+    opacity: 1;
+    transform: rotate(0) scale(1.6); }
+  .header__left__checkbox:checked ~ .header__left__login__button .header__left__login__button--open {
+    opacity: 0;
+    transform: rotate(-220deg) scale(0.5); }
 
 .footer {
   grid-column: container-start / container-end;
@@ -132,75 +208,42 @@ body {
   font-size: 0.5rem; }
 
 .btn {
-  font-size: 1.6rem;
-  font-family: inherit;
-  background-color: #dbb04aff;
+  background-color: transparent;
   padding: 1rem;
-  width: 8rem;
   outline: none;
   border: none;
   border-radius: 1.5rem;
-  box-shadow: 0 2rem 6rem rbga(white, 0.5); }
-
-.signup-btn {
-  letter-spacing: 1rem;
-  transition: all 0.2s;
-  width: 100%; }
-  .signup-btn:hover {
-    animation: pulse 1.5s infinite;
-    transform: scale(1.021); }
-  .signup-btn:focus, .signup-btn:active {
-    background-color: #96bb7c;
-    transform: scale(1); }
+  box-shadow: 0 2rem 6rem rbga(white, 0.5);
+  transition: all 0.3s ease, transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.875); }
+  .btn--primary {
+    border: 0.5px solid #96bb7c;
+    color: #96bb7c; }
+  .btn--secondary {
+    border: 0.5px solid #e08f62;
+    color: #e08f62; }
+  .btn--tertiary {
+    border: 0.5px solid #dbb04aff;
+    color: #dbb04aff; }
 
 .login-btn {
-  width: 5rem;
-  height: 5rem;
-  letter-spacing: 2.5px;
-  background-color: #96bb7c;
-  transition: all 0.5s; }
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  color: #dbb04aff;
+  background-color: transparent;
+  background-image: linear-gradient(90deg, rgba(150, 187, 124, 0) 21%, #96bb7c 28%, #e08f62 48%, #f8ce6c 67%, rgba(150, 187, 124, 0) 82%);
+  background-size: 550%;
+  background-position: right;
+  border: 0.5px solid #dbb04aff;
+  transition: background-position 1s cubic-bezier(1, 0.885, 0.32, 1.2), background-color 0.1s, transform 0.3s cubic-bezier(0, 0.885, 0.32, 1.875); }
   .login-btn:hover {
-    transform: scale(1.5);
-    border-radius: 70%; }
-
-.h-nav__list {
-  list-style: none;
-  display: flex;
-  justify-content: space-around; }
-
-.h-nav__item {
-  padding: 1.5rem;
-  color: yellow;
-  position: relative; }
-  .h-nav__item::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 3px;
-    width: 0%;
-    transform: scaleX(0);
-    background-color: rgba(255, 255, 255, 0.4);
-    transform-origin: left;
-    transition: width 0.2s ease, height 0.4s 0.2s, transform 0.4s cubic-bezier(1, 0, 0, 1);
-    z-index: 1; }
-  .h-nav__item:hover::before, .h-nav__item--active::before {
-    height: 100%;
-    width: 100%;
-    transform: scaleX(1); }
-  .h-nav__item--active {
-    background-color: rgba(255, 255, 255, 0.4); }
-
-.h-nav__item--active .h-nav__link:link,
-.h-nav__item--active .h-nav__link:visited {
-  color: #e08f62; }
-
-.h-nav__link:link, .h-nav__link:visited {
-  text-decoration: none;
-  font-size: 2.5rem;
-  position: relative;
-  z-index: 2;
-  color: white; }
+    background-position: left;
+    border: 0.5px solid #96bb7c;
+    color: #96bb7c; }
+  .login-btn:active {
+    background-color: #96bb7c;
+    color: black; }
 
 .f-nav {
   font-size: 1.5rem; }
@@ -231,11 +274,9 @@ body {
     color: #afb3aa; }
 
 .form {
-  width: 50%;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  width: 100%; }
+  align-items: stretch; }
   .form__input {
     font: inherit;
     font-size: 1.5rem;
@@ -246,6 +287,7 @@ body {
     border-bottom: 2px solid transparent;
     background-color: rgba(150, 187, 124, 0.05);
     padding: 1rem;
+    border-radius: 1rem;
     transition: all 0.2s; }
     .form__input::placeholder {
       font: "Nunito", sans-serif;
@@ -286,6 +328,44 @@ body {
     fill: #cc7351; }
   .icon--pacman {
     fill: #f8ce6c; }
+
+.login-nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 70vh;
+  width: 40vw;
+  transform: scale(0);
+  opacity: 0;
+  z-index: 100;
+  border-radius: 90% 5% 90% 90%;
+  background-color: #1c2416;
+  transform-origin: top right;
+  transition: all 0.5s cubic-bezier(0.83, -0.76, 0, 1.64);
+  display: grid;
+  grid-template-columns: 10vw 20vw 10vw;
+  grid-template-rows: 1fr 5vh 25vh 5vh 1fr;
+  grid-gap: 2rem;
+  justify-items: center; }
+  .login-nav__form {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    justify-self: stretch;
+    align-self: center; }
+  .login-nav__heading {
+    color: #dbb04aff;
+    grid-column: 2/3;
+    grid-row: 2/3; }
+  .login-nav__btn-fb {
+    grid-row: 4/5;
+    grid-column: 2/3;
+    padding: 1.4rem;
+    font: inherit;
+    font-weight: 700;
+    font-size: 1.3rem; }
+    .login-nav__btn-fb:active {
+      background-color: #dbb04aff;
+      color: black; }
 
 .homepage__animated-msg {
   grid-column: col-start 2 / col-end 4;
@@ -342,12 +422,12 @@ body {
 
 .homepage__projectdetails {
   grid-column: col-start 1 / col-end 5;
-  grid-row: 3 / 4;
-  align-self: flex-end;
+  grid-row: 3 / 5;
+  align-self: center;
   padding: 1.5rem;
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: repeat(5, minmax(min-content, 1fr));
+  grid-template-columns: 5vw repeat(3, minmax(min-content, 15vw)) 5vw;
   justify-items: center;
   align-items: stretch;
   grid-gap: 1rem; }

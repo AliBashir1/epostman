@@ -1,18 +1,80 @@
 .header {
-  grid-column: container-start 1 / container-end;
+  grid-column: container-start / container-end;
   grid-row: 2/3;
   height: 5rem;
   margin: 0.5rem 1rem;
   z-index: 999;
   display: flex;
-  &__logo {
-    width: 4rem;
-    height: 4rem;
-    fill: $color-primary;
-    margin-right: 1rem;
-  }
-  &__text {
-    // split the space between e-postman and login button
+  // border: 2px red solid;
+  position: relative;
+  &__right {
     margin-right: auto;
+    display: flex;
+    &__logo {
+      width: 4rem;
+      height: 4rem;
+      fill: $color-primary;
+      margin-right: 2rem;
+    }
+  }
+  &__left {
+    // hidden check box to trigger login form toggle
+    &__checkbox {
+      display: none;
+    }
+
+    &__login {
+      // login button
+      &__button {
+        z-index: 200;
+        position: relative;
+        display: block;
+
+        display: inline-block;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        background-color: $color-primary-light;
+        transition: all 0.1s ease;
+
+        font: inherit;
+        font-size: 1.5rem;
+        font-weight: 700;
+
+        &--open {
+          display: inline-block;
+          color: black;
+          position: absolute;
+          top: 1.4rem;
+          right: 5px;
+
+          transition: all 0.3s ease;
+        }
+        &--close {
+          color: $color-secondary-dark;
+          position: absolute;
+          top: 1.4rem;
+          right: 2rem;
+          opacity: 0;
+          transform: rotate(220deg);
+          transition: all 0.3s ease;
+        }
+      }
+    }
+
+    // trigger menu
+    &__checkbox:checked + .login-nav {
+      transform: scale(1);
+      opacity: 1;
+    }
+    // switch between login and X
+    &__checkbox:checked ~ &__login__button &__login__button--close {
+      opacity: 1;
+      transform: rotate(0) scale(1.6);
+    }
+    &__checkbox:checked ~ &__login__button &__login__button--open {
+      opacity: 0;
+      transform: rotate(-220deg) scale(0.5);
+    }
   }
 }

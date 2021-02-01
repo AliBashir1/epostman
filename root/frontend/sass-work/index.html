@@ -9,17 +9,34 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- set up login form -->
-    <!-- <div class="header__loginform">
-          <form action="#" class="loginform">
-            <input type="text" >
-          </form>
-        </div> -->
-
     <div class="header">
-      <svg class="header__logo"><use xlink:href="img/sprite.svg#icon-paper-plane"></use></svg>
-      <p class="header__text logo-text">e-postman</p>
-      <button class="btn login-btn">Login</button>
+      <!-- right header -->
+      <div class="header__right">
+        <svg class="header__right__logo"><use xlink:href="img/sprite.svg#icon-paper-plane"></use></svg>
+        <p class="logo-text">e-postman</p>
+      </div>
+
+      <!-- left header with login form -->
+      <div class="header__left">
+        <input type="checkbox" class="header__left__checkbox" id="login-menu-toggle" />
+        <div class="login-nav">
+          &nbsp;
+          <h3 class="login-nav__heading heading-3">Login</h3>
+          <form action="#" class="form login-nav__form">
+            <input type="email" class="form__input" name="email" placeholder="Your email" id="lEmail" autocomplete="off" required />
+            <label for="lEmail" class="form__label">Your Email</label>
+            <input type="password" class="form__input" name="password" placeholder="password" id="lPassword" autocomplete="off" required />
+            <label for="lPassword" class="form__label">Password</label>
+            <button class="btn login-btn btn-pressed-effect" type="submit">log in</button>
+          </form>
+          <a class="login-nav__btn-fb btn btn--secondary btn-pressed-effect">Password ?</a>
+        </div>
+
+        <label for="login-menu-toggle" class="header__left__login__button pulse-scale-effect">
+          <span class="header__left__login__button--open">Login</span>
+          <span class="header__left__login__button--close">X</span>
+        </label>
+      </div>
     </div>
 
     <main class="container homepage">
@@ -50,7 +67,7 @@
 
           <input type="password" class="form__input" name="password" placeholder="password" id="sPassword" autocomplete="off" required />
           <label for="sPassword" class="form__label">Password</label>
-          <button class="btn signup-btn" type="submit">Sign up</button>
+          <button class="btn btn--primary pulse-scale-effect" type="submit">Sign up</button>
         </form>
         <div class="homepage__signup__text"><span>or</span></div>
         <div class="homepage__signup__icon-box">

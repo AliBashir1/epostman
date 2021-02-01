@@ -75,13 +75,13 @@
 
   &__projectdetails {
     grid-column: col-start 1 / col-end 5;
-    grid-row: 3 / 4;
-    align-self: flex-end;
+    grid-row: 3 / 5;
+    align-self: center;
     padding: 1.5rem;
 
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: repeat(5, minmax(min-content, 1fr));
+    grid-template-columns: 5vw repeat(3, minmax(min-content, 15vw)) 5vw;
     justify-items: center;
     align-items: stretch;
     grid-gap: 1rem;

@@ -1,52 +1,52 @@
-.h-nav {
-  &__list {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-  }
-  &__item {
-    padding: 1.5rem;
-    color: yellow;
-    position: relative;
-    &::before {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 3px;
-      width: 0%;
-      transform: scaleX(0);
-      background-color: rgba(white, 0.4);
-      transform-origin: left;
-      transition: width 0.2s ease, height 0.4s 0.2s, transform 0.4s cubic-bezier(1, 0, 0, 1);
-      z-index: 1;
-    }
+// .h-nav {
+//   &__list {
+//     list-style: none;
+//     display: flex;
+//     justify-content: space-around;
+//   }
+//   &__item {
+//     padding: 1.5rem;
+//     color: yellow;
+//     position: relative;
+//     &::before {
+//       content: "";
+//       position: absolute;
+//       bottom: 0;
+//       left: 0;
+//       height: 3px;
+//       width: 0%;
+//       transform: scaleX(0);
+//       background-color: rgba(white, 0.4);
+//       transform-origin: left;
+//       transition: width 0.2s ease, height 0.4s 0.2s, transform 0.4s cubic-bezier(1, 0, 0, 1);
+//       z-index: 1;
+//     }
 
-    &:hover::before,
-    &--active::before {
-      height: 100%;
-      width: 100%;
-      transform: scaleX(1);
-    }
-    //  selected item in menu
-    &--active {
-      background-color: rgba(white, 0.4);
-    }
-  }
+//     &:hover::before,
+//     &--active::before {
+//       height: 100%;
+//       width: 100%;
+//       transform: scaleX(1);
+//     }
+//     //  selected item in menu
+//     &--active {
+//       background-color: rgba(white, 0.4);
+//     }
+//   }
 
-  &__item--active &__link:link,
-  &__item--active &__link:visited {
-    color: $color-secondary;
-  }
+//   &__item--active &__link:link,
+//   &__item--active &__link:visited {
+//     color: $color-secondary;
+//   }
 
-  &__link {
-    &:link,
-    &:visited {
-      text-decoration: none;
-      font-size: 2.5rem;
-      position: relative;
-      z-index: 2;
-      color: white;
-    }
-  }
-}
+//   &__link {
+//     &:link,
+//     &:visited {
+//       text-decoration: none;
+//       font-size: 2.5rem;
+//       position: relative;
+//       z-index: 2;
+//       color: white;
+//     }
+//   }
+// }

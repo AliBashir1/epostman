@@ -1,38 +1,49 @@
 .btn {
-  font-size: 1.6rem;
-  font-family: inherit;
-  background-color: $color-tertiary;
+  background-color: transparent;
   padding: 1rem;
-  width: 8rem;
   outline: none;
   border: none;
   border-radius: 1.5rem;
   box-shadow: $light-shadow;
-}
-.signup-btn {
-  letter-spacing: 1rem;
-  transition: all 0.2s;
-  width: 100%;
-  &:hover {
-    animation: pulse 1.5s infinite;
-    transform: scale(1.021);
+  transition: all 0.3s ease, transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.875);
+
+  &--primary {
+    border: 0.5px solid $color-primary;
+    color: $color-primary;
   }
-  &:focus,
-  &:active {
-    background-color: $color-primary;
-    transform: scale(1);
+  &--secondary {
+    border: 0.5px solid $color-secondary;
+    color: $color-secondary;
+  }
+  &--tertiary {
+    border: 0.5px solid $color-tertiary;
+    color: $color-tertiary;
   }
 }
 
 .login-btn {
-  width: 5rem;
-  height: 5rem;
-  letter-spacing: 2.5px;
-  background-color: $color-primary;
-  transition: all 0.5s;
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+
+  color: $color-tertiary;
+  background-color: transparent;
+
+  background-image: linear-gradient(90deg, rgba(150, 187, 124, 0) 21%, rgba(150, 187, 124, 1) 28%, rgba(224, 143, 98, 1) 48%, rgba(248, 206, 108, 1) 67%, rgba(150, 187, 124, 0) 82%);
+  background-size: 550%;
+  background-position: right;
+  border: 0.5px solid $color-tertiary;
+  transition: background-position 1s cubic-bezier(1, 0.885, 0.32, 1.2), background-color 0.1s, transform 0.3s cubic-bezier(0, 0.885, 0.32, 1.875);
 
   &:hover {
-    transform: scale(1.5);
-    border-radius: 70%;
+    background-position: left;
+    border: 0.5px solid $color-primary;
+    color: $color-primary;
+  }
+
+  &:active {
+    background-color: $color-primary;
+    color: black;
   }
 }

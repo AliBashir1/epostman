@@ -17,3 +17,46 @@
 .mt-l {
   margin-top: 8rem;
 }
+
+.pulse-scale-effect {
+  &:hover {
+    animation: pulse 1s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: scale(1.05);
+  }
+  &:focus,
+  &:active {
+    background-color: $color-primary;
+    color: black;
+    transform: scale(0.9);
+  }
+}
+
+.btn-pressed-effect {
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:focus,
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.gradient-effect {
+  background-color: transparent;
+  background-image: linear-gradient(90deg, rgba(150, 187, 124, 0) 21%, rgba(150, 187, 124, 1) 28%, rgba(224, 143, 98, 1) 48%, rgba(248, 206, 108, 1) 67%, rgba(150, 187, 124, 0) 82%);
+  background-size: 550%;
+  background-position: right;
+  border: 0.5px solid $color-tertiary;
+  transition: background-position 1s cubic-bezier(1, 0.885, 0.32, 1.2), background-color 0.1s;
+
+  &:hover {
+    background-position: left;
+    border: 0.5px solid $color-primary;
+    color: $color-primary;
+  }
+
+  &:active {
+    background-color: $color-primary;
+    color: black;
+  }
+}
